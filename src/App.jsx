@@ -49,6 +49,7 @@ function App() {
         return Object.entries(positions).filter(([_, posMap]) => posMap[3]).map(([group, posMap]) => ({ ...posMap[3], group }));
     }, [positions]);
 
+    // Total de clasificados (2 por grupo + 8 mejores terceros)
     const totalQualifiers = useMemo(() => {
         let direct = 0;
         Object.values(positions).forEach(pMap => {
@@ -76,6 +77,7 @@ function App() {
         setBracket(prev => {
             const next = { ...prev };
 
+            // Lógica especial para semifinales: enviar al perdedor al tercer puesto
             if (currentStage === 'sf') {
                 const matchIndex = currentIndex * 2;
                 const team1 = prev.sf[matchIndex];
