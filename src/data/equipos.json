@@ -3,253 +3,109 @@
         {
             "grupo": "A",
             "equipos": [
-                {
-                    "nombre": "México",
-                    "bandera": "🇲🇽"
-                },
-                {
-                    "nombre": "Sudafrica",
-                    "bandera": "🇿🇦"
-                },
-                {
-                    "nombre": "Corea del Sur",
-                    "bandera": "🇰🇷"
-                },
-                {
-                    "nombre": "Playoff D",
-                    "bandera": "🏳️"
-                }
+                { "nombre": "México", "bandera": "🇲🇽", "imagen": "mexico.png" },
+                { "nombre": "Sudafrica", "bandera": "🇿🇦", "imagen": "sudafrica.png" },
+                { "nombre": "Corea del Sur", "bandera": "🇰🇷", "imagen": "corea-del-sur.png" },
+                { "nombre": "Playoff D", "bandera": "🏳️" }
             ]
         },
         {
             "grupo": "B",
             "equipos": [
-                {
-                    "nombre": "Canadá",
-                    "bandera": "🇨🇦"
-                },
-                {
-                    "nombre": "Playoff A",
-                    "bandera": "🏳️"
-                },
-                {
-                    "nombre": "Qatar",
-                    "bandera": "🇶🇦"
-                },
-                {
-                    "nombre": "Suiza",
-                    "bandera": "🇨🇭"
-                }
+                { "nombre": "Canadá", "bandera": "🇨🇦", "imagen": "canada.png" },
+                { "nombre": "Playoff A", "bandera": "🏳️" },
+                { "nombre": "Qatar", "bandera": "🇶🇦", "imagen": "katar.png" },
+                { "nombre": "Suiza", "bandera": "🇨🇭", "imagen": "suiza.png" }
             ]
         },
         {
             "grupo": "C",
             "equipos": [
-                {
-                    "nombre": "Brasil",
-                    "bandera": "🇧🇷"
-                },
-                {
-                    "nombre": "Marruecos",
-                    "bandera": "🇲🇦"
-                },
-                {
-                    "nombre": "Haití",
-                    "bandera": "🇭🇹"
-                },
-                {
-                    "nombre": "Escocia",
-                    "bandera": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
-                }
+                { "nombre": "Brasil", "bandera": "🇧🇷", "imagen": "brasil.png" },
+                { "nombre": "Marruecos", "bandera": "🇲🇦", "imagen": "marruecos.png" },
+                { "nombre": "Haití", "bandera": "🇭🇹", "imagen": "haiti.png" },
+                { "nombre": "Escocia", "bandera": "🏴\u200D󠁧󠁢󠁳󠁣󠁴󠁿", "imagen": "escocia.png" }
             ]
         },
         {
             "grupo": "D",
             "equipos": [
-                {
-                    "nombre": "Usa",
-                    "bandera": "🇺🇸"
-                },
-                {
-                    "nombre": "Paraguay",
-                    "bandera": "🇵🇾"
-                },
-                {
-                    "nombre": "Australia",
-                    "bandera": "🇦🇺"
-                },
-                {
-                    "nombre": "Playoff C",
-                    "bandera": "🏳️"
-                }
+                { "nombre": "Usa", "bandera": "🇺🇸", "imagen": "usa.png" },
+                { "nombre": "Paraguay", "bandera": "🇵🇾", "imagen": "paraguay.png" },
+                { "nombre": "Australia", "bandera": "🇦🇺", "imagen": "australia.png" },
+                { "nombre": "Playoff C", "bandera": "🏳️" }
             ]
         },
         {
             "grupo": "E",
             "equipos": [
-                {
-                    "nombre": "Alemania",
-                    "bandera": "🇩🇪"
-                },
-                {
-                    "nombre": "Curazao",
-                    "bandera": "🇨🇼"
-                },
-                {
-                    "nombre": "Costa de marfil",
-                    "bandera": "🇨🇮"
-                },
-                {
-                    "nombre": "Ecuador",
-                    "bandera": "🇪🇨"
-                }
+                { "nombre": "Alemania", "bandera": "🇩🇪", "imagen": "alemania.png" },
+                { "nombre": "Curazao", "bandera": "🇨🇼", "imagen": "curazao.png" },
+                { "nombre": "Costa de marfil", "bandera": "🇨🇮", "imagen": "costa-de-marfil.png" },
+                { "nombre": "Ecuador", "bandera": "🇪🇨", "imagen": "ecuador.png" }
             ]
         },
         {
             "grupo": "F",
             "equipos": [
-                {
-                    "nombre": "Paises Bajos",
-                    "bandera": "🇳🇱"
-                },
-                {
-                    "nombre": "Japón",
-                    "bandera": "🇯🇵"
-                },
-                {
-                    "nombre": "Playoff B",
-                    "bandera": "🏳️"
-                },
-                {
-                    "nombre": "Tunez",
-                    "bandera": "🇹🇳"
-                }
+                { "nombre": "Paises Bajos", "bandera": "🇳🇱", "imagen": "paises-bajos.png" },
+                { "nombre": "Japón", "bandera": "🇯🇵", "imagen": "japon.png" },
+                { "nombre": "Playoff B", "bandera": "🏳️" },
+                { "nombre": "Tunez", "bandera": "🇹🇳", "imagen": "tunez.png" }
             ]
         },
         {
             "grupo": "G",
             "equipos": [
-                {
-                    "nombre": "Belgica",
-                    "bandera": "🇧🇪"
-                },
-                {
-                    "nombre": "Egipto",
-                    "bandera": "🇪🇬"
-                },
-                {
-                    "nombre": "Irán",
-                    "bandera": "🇮🇷"
-                },
-                {
-                    "nombre": "Nueva Zelanda",
-                    "bandera": "🇳🇿"
-                }
+                { "nombre": "Belgica", "bandera": "🇧🇪", "imagen": "belgica.png" },
+                { "nombre": "Egipto", "bandera": "🇪🇬", "imagen": "egipto.png" },
+                { "nombre": "Irán", "bandera": "🇮🇷" },
+                { "nombre": "Nueva Zelanda", "bandera": "🇳🇿", "imagen": "nueva-zelanda.png" }
             ]
         },
         {
             "grupo": "H",
             "equipos": [
-                {
-                    "nombre": "España",
-                    "bandera": "🇪🇸"
-                },
-                {
-                    "nombre": "Cabo verde",
-                    "bandera": "🇨🇻"
-                },
-                {
-                    "nombre": "Arabia Saudita",
-                    "bandera": "🇸🇦"
-                },
-                {
-                    "nombre": "Uruguay",
-                    "bandera": "🇺🇾"
-                }
+                { "nombre": "España", "bandera": "🇪🇸", "imagen": "espana.png" },
+                { "nombre": "Cabo verde", "bandera": "🇨🇻", "imagen": "cabo-verde.png" },
+                { "nombre": "Arabia Saudita", "bandera": "🇸🇦", "imagen": "arabia-saudita.png" },
+                { "nombre": "Uruguay", "bandera": "🇺🇾", "imagen": "uruguay.png" }
             ]
         },
         {
             "grupo": "I",
             "equipos": [
-                {
-                    "nombre": "Fracia",
-                    "bandera": "🇫🇷"
-                },
-                {
-                    "nombre": "Senegal",
-                    "bandera": "🇸🇳"
-                },
-                {
-                    "nombre": "Playoff 2",
-                    "bandera": "🏳️"
-                },
-                {
-                    "nombre": "Noruega",
-                    "bandera": "🇳🇴"
-                }
+                { "nombre": "Francia", "bandera": "🇫🇷", "imagen": "francia.png" },
+                { "nombre": "Senegal", "bandera": "🇸🇳", "imagen": "senegal.png" },
+                { "nombre": "Playoff 2", "bandera": "🏳️" },
+                { "nombre": "Noruega", "bandera": "🇳🇴", "imagen": "noruega.png" }
             ]
         },
         {
             "grupo": "J",
             "equipos": [
-                {
-                    "nombre": "Argentina",
-                    "bandera": "🇦🇷"
-                },
-                {
-                    "nombre": "Argelia",
-                    "bandera": "🇩🇿"
-                },
-                {
-                    "nombre": "Austria",
-                    "bandera": "🇦🇹"
-                },
-                {
-                    "nombre": "Jordania",
-                    "bandera": "🇯🇴"
-                }
+                { "nombre": "Argentina", "bandera": "🇦🇷", "imagen": "argentina.png" },
+                { "nombre": "Argelia", "bandera": "🇩🇿", "imagen": "argelia.png" },
+                { "nombre": "Austria", "bandera": "🇦🇹", "imagen": "austria.png" },
+                { "nombre": "Jordania", "bandera": "🇯🇴", "imagen": "jordania.png" }
             ]
         },
         {
             "grupo": "K",
             "equipos": [
-                {
-                    "nombre": "Portugal",
-                    "bandera": "🇵🇹"
-                },
-                {
-                    "nombre": "Playoff 1",
-                    "bandera": "🏳️"
-                },
-                {
-                    "nombre": "Uzbequistán",
-                    "bandera": "🇺🇿"
-                },
-                {
-                    "nombre": "Colombia",
-                    "bandera": "🇨🇴"
-                }
+                { "nombre": "Portugal", "bandera": "🇵🇹", "imagen": "portugal.png" },
+                { "nombre": "Playoff 1", "bandera": "🏳️" },
+                { "nombre": "Uzbequistán", "bandera": "🇺🇿", "imagen": "uzbekistan.png" },
+                { "nombre": "Colombia", "bandera": "🇨🇴", "imagen": "colombia.png" }
             ]
         },
         {
             "grupo": "L",
             "equipos": [
-                {
-                    "nombre": "Inglaterra",
-                    "bandera": "🏴\u200D󠁧󠁢󠁥󠁮󠁧󠁿"
-                },
-                {
-                    "nombre": "Croacia",
-                    "bandera": "🇭🇷"
-                },
-                {
-                    "nombre": "Ghana",
-                    "bandera": "🇬🇭"
-                },
-                {
-                    "nombre": "Panamá",
-                    "bandera": "🇵🇦"
-                }
+                { "nombre": "Inglaterra", "bandera": "🏴\u200D󠁧󠁢󠁥󠁮󠁧󠁿", "imagen": "inglaterra.png" },
+                { "nombre": "Croacia", "bandera": "🇭🇷", "imagen": "croacia.png" },
+                { "nombre": "Ghana", "bandera": "🇬🇭", "imagen": "ghana.png" },
+                { "nombre": "Panamá", "bandera": "🇵🇦", "imagen": "panama.png" }
             ]
         }
     ]

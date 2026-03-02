@@ -16,6 +16,15 @@ const MATCH_RULES = [
     { id: 87, t1: '1K', t2: 'M3' }, { id: 88, t1: '2D', t2: '2G' }
 ];
 
+const TeamFlag = ({ team, size = "small" }) => {
+    if (!team) return null;
+    if (team.imagen) {
+        const flagUrl = new URL(`./banderas/${team.imagen}`, import.meta.url).href;
+        return <img src={flagUrl} alt={team.nombre} className={`flag-img ${size}`} />;
+    }
+    return <span className="flag">{team.bandera}</span>;
+};
+
 function App() {
     const [positions, setPositions] = useState({});
     const [bracket, setBracket] = useState({
@@ -40,7 +49,6 @@ function App() {
         return Object.entries(positions).filter(([_, posMap]) => posMap[3]).map(([group, posMap]) => ({ ...posMap[3], group }));
     }, [positions]);
 
-    // Total de clasificados (2 por grupo + 8 mejores terceros)
     const totalQualifiers = useMemo(() => {
         let direct = 0;
         Object.values(positions).forEach(pMap => {
@@ -68,7 +76,6 @@ function App() {
         setBracket(prev => {
             const next = { ...prev };
 
-            // Lógica especial para semifinales: enviar al perdedor al tercer puesto
             if (currentStage === 'sf') {
                 const matchIndex = currentIndex * 2;
                 const team1 = prev.sf[matchIndex];
@@ -136,7 +143,7 @@ function App() {
                         onClick={() => isReady && advance(t, 'r16', matchIdx)}
                         title={isReady ? "Click para avanzar" : ""}
                     >
-                        <span className="flag">{t?.bandera || ''}</span>
+                        <TeamFlag team={t} />
                         <span className="name">{t?.nombre || '-'}</span>
                     </div>
                 ))}
@@ -160,7 +167,7 @@ function App() {
                     onDragStart={e => handleDragStart(e, t1)}
                     onClick={() => isReady && advance(t1, nextStage, pairIdx, stage, pairIdx)}
                 >
-                    <span className="flag">{t1?.bandera || ''}</span>
+                    <TeamFlag team={t1} />
                     <span className="name">{t1?.nombre || 'Soltar...'}</span>
                 </div>
                 <div
@@ -171,7 +178,7 @@ function App() {
                     onDragStart={e => handleDragStart(e, t2)}
                     onClick={() => isReady && advance(t2, nextStage, pairIdx, stage, pairIdx)}
                 >
-                    <span className="flag">{t2?.bandera || ''}</span>
+                    <TeamFlag team={t2} />
                     <span className="name">{t2?.nombre || 'Soltar...'}</span>
                 </div>
             </div>
@@ -212,7 +219,7 @@ function App() {
                                     const pos = Object.keys(positions[g.grupo] || {}).find(k => positions[g.grupo][k].nombre === eq.nombre);
                                     return (
                                         <div key={eq.nombre} className="team-row-official">
-                                            <div className="team-info"><span className="flag">{eq.bandera}</span><span className="name">{eq.nombre}</span></div>
+                                            <div className="team-info"><TeamFlag team={eq} /><span className="name">{eq.nombre}</span></div>
                                             {[1, 2, 3].map(p => (
                                                 <div key={p} className="pos-radio">
                                                     <label><input type="radio" checked={parseInt(pos) === p} onChange={() => setTeamPosition(g.grupo, p, eq)} /><span className={`radio-btn p${p}`}>{p}</span></label>
@@ -255,7 +262,7 @@ function App() {
                                     title="Soltar campeón">
                                     {bracket.winner ? (
                                         <div style={{ textAlign: 'center' }}>
-                                            <span className="flag" style={{ fontSize: '2rem' }}>{bracket.winner.bandera}</span>
+                                            <TeamFlag team={bracket.winner} size="large" />
                                             <div style={{ fontWeight: 800, color: 'var(--accent-color)', fontSize: '1.1rem' }}>{bracket.winner.nombre}</div>
                                             <div style={{ fontSize: '0.6rem', letterSpacing: '2px', color: 'var(--accent-color)' }}>CAMPEÓN</div>
                                         </div>
@@ -278,7 +285,7 @@ function App() {
                                                 className={`match-team ${!t ? 'empty' : 'winner-ready'}`}
                                                 onClick={() => isReady && advance(t, 'thirdWinner', 0)}
                                             >
-                                                <span className="flag">{t?.bandera || ''}</span>
+                                                <TeamFlag team={t} />
                                                 <span className="name">{t?.nombre || 'Perdedor Semi'}</span>
                                             </div>
                                         );
