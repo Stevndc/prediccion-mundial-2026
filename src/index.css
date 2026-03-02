@@ -261,6 +261,17 @@ input:checked+.radio-btn.p3 {
     padding-top: 2rem;
 }
 
+.bracket-col-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
 .bracket-split-view {
     display: flex;
     justify-content: center;

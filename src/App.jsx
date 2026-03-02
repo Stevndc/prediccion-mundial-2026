@@ -261,28 +261,35 @@ function App() {
                 </section>
 
                 <section className="bracket-section">
-                    <h2>Cuadro Final Oficial (32 Selecciones)</h2>
-                    <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Avanza haciendo clic en el ganador o arrastrando el equipo</p>
+                    <h2>Cuadro Final Oficial</h2>
+                    <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem' }}>Fase Eliminatoria: 32 selecciones hasta la gloria</p>
                     <div className="bracket-split-view">
                         {/* LADO IZQUIERDO */}
                         <div className="bracket-side left">
-                            <div className="bracket-col">{r32Matches.slice(0, 8).map((m, i) => renderMatch(m, i))}</div>
                             <div className="bracket-col">
+                                <div className="bracket-col-title">16AVOS</div>
+                                {r32Matches.slice(0, 8).map((m, i) => renderMatch(m, i))}
+                            </div>
+                            <div className="bracket-col">
+                                <div className="bracket-col-title">OCTAVOS</div>
                                 {renderSlotPair('r16', 0, 'MATCH 89', 'qf')}
                                 {renderSlotPair('r16', 1, 'MATCH 90', 'qf')}
                                 {renderSlotPair('r16', 2, 'MATCH 91', 'qf')}
                                 {renderSlotPair('r16', 3, 'MATCH 92', 'qf')}
                             </div>
                             <div className="bracket-col">
+                                <div className="bracket-col-title">CUARTOS</div>
                                 {renderSlotPair('qf', 0, 'MATCH 97', 'sf')}
                                 {renderSlotPair('qf', 1, 'MATCH 98', 'sf')}
                             </div>
                         </div>
 
                         <div className="bracket-center">
+                            <div className="bracket-col-title">SEMIFINAL</div>
                             {renderSlotPair('sf', 0, 'SEMI 1', 'final')}
 
                             <div className="winner-podium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                                <div className="bracket-col-title" style={{ marginBottom: 0 }}>CAMPEÓN</div>
                                 <div className="champion-slot"
                                     onDrop={e => { e.preventDefault(); try { advance(JSON.parse(e.dataTransfer.getData('team')), 'winner', 0); } catch (err) { } }}
                                     onDragOver={e => e.preventDefault()}
@@ -291,11 +298,11 @@ function App() {
                                         <div style={{ textAlign: 'center' }}>
                                             <TeamFlag team={bracket.winner} size="large" />
                                             <div style={{ fontWeight: 800, color: 'var(--accent-color)', fontSize: '1.1rem' }}>{bracket.winner.nombre}</div>
-                                            <div style={{ fontSize: '0.6rem', letterSpacing: '2px', color: 'var(--accent-color)' }}>CAMPEÓN</div>
+                                            <img src={new URL('./banderas/copa-mundial.png', import.meta.url).href} alt="Copa" style={{ height: '30px', marginTop: '5px' }} />
                                         </div>
                                     ) : (
                                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 0.3 }}>
-                                            <Trophy size={40} className="big-trophy" />
+                                            <img src={new URL('./banderas/copa-mundial.png', import.meta.url).href} alt="Logo Mundial" style={{ height: '80px', filter: 'grayscale(1)' }} />
                                             <span style={{ fontSize: '0.6rem', fontWeight: 800 }}>FINAL</span>
                                         </div>
                                     )}
@@ -326,19 +333,27 @@ function App() {
                             </div>
 
                             {renderSlotPair('sf', 1, 'SEMI 2', 'final')}
-                            <div style={{ marginTop: '1rem' }}>{renderSlotPair('final', 0, 'GRAN FINAL', 'winner')}</div>
+                            <div style={{ marginTop: '1rem' }}>
+                                <div className="bracket-col-title">FINAL</div>
+                                {renderSlotPair('final', 0, 'GRAN FINAL', 'winner')}
+                            </div>
                         </div>
 
                         {/* LADO DERECHO */}
                         <div className="bracket-side right" style={{ flexDirection: 'row-reverse' }}>
-                            <div className="bracket-col">{r32Matches.slice(8, 16).map((m, i) => renderMatch(m, i + 8))}</div>
                             <div className="bracket-col">
+                                <div className="bracket-col-title">16AVOS</div>
+                                {r32Matches.slice(8, 16).map((m, i) => renderMatch(m, i + 8))}
+                            </div>
+                            <div className="bracket-col">
+                                <div className="bracket-col-title">OCTAVOS</div>
                                 {renderSlotPair('r16', 4, 'MATCH 93', 'qf')}
                                 {renderSlotPair('r16', 5, 'MATCH 94', 'qf')}
                                 {renderSlotPair('r16', 6, 'MATCH 95', 'qf')}
                                 {renderSlotPair('r16', 7, 'MATCH 96', 'qf')}
                             </div>
                             <div className="bracket-col">
+                                <div className="bracket-col-title">CUARTOS</div>
                                 {renderSlotPair('qf', 2, 'MATCH 99', 'sf')}
                                 {renderSlotPair('qf', 3, 'MATCH 100', 'sf')}
                             </div>
