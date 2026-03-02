@@ -74,6 +74,106 @@ h2 {
     font-size: 0.8rem;
 }
 
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 2rem;
+}
+
+.welcome-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-images {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.hero-img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(253, 185, 39, 0.2));
+}
+
+.welcome-info {
+    flex: 1;
+}
+
+.welcome-info h2 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.welcome-info p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+}
+
+.instruction-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.6rem;
+    border-radius: 6px;
+}
+
+.step-num {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+.step p {
+    margin: 0 !important;
+    font-size: 0.75rem !important;
+    color: var(--text-color) !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+}
+
+@media (max-width: 768px) {
+    .welcome-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .hero-img {
+        height: 100px;
+    }
+    .instruction-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Groups */
 .groups-grid {
     display: grid;
@@ -240,7 +340,7 @@ input:checked+.radio-btn.p3 {
 .flag-img {
     object-fit: contain;
     border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .flag-img.small {

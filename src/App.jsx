@@ -196,6 +196,33 @@ function App() {
             </header>
 
             <main>
+                <section className="welcome-section">
+                    <div className="welcome-card">
+                        <div className="welcome-images">
+                            <img src={new URL('./banderas/copa-mundial.png', import.meta.url).href} alt="Copa Mundial" className="hero-img" />
+                            <img src={new URL('./banderas/copa-mundial (1).png', import.meta.url).href} alt="Copa Mundial" className="hero-img desktop-only" />
+                        </div>
+                        <div className="welcome-info">
+                            <h2>¡Haz tu predicción oficial! 🏆</h2>
+                            <p>Bienvenido al simulador más completo del Mundial 2026. Es hora de jugar y predecir quién levantará la copa.</p>
+                            <div className="instruction-steps">
+                                <div className="step">
+                                    <span className="step-num">1</span>
+                                    <p>Selecciona el <strong>1º y 2º</strong> puesto de cada grupo.</p>
+                                </div>
+                                <div className="step">
+                                    <span className="step-num">2</span>
+                                    <p>Elige al <strong>3º lugar</strong> de cada grupo para los mejores terceros.</p>
+                                </div>
+                                <div className="step">
+                                    <span className="step-num">3</span>
+                                    <p>¡Avanza en el <strong>Bracket</strong> hasta encontrar al campeón!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="group-stage">
                     <div className="stage-header">
                         <h2>Fase de Grupos</h2>
