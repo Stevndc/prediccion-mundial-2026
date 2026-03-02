@@ -285,11 +285,19 @@ function App() {
                         </div>
 
                         <div className="bracket-center">
-                            <div className="bracket-col-title">SEMIFINAL</div>
-                            {renderSlotPair('sf', 0, 'SEMI 1', 'final')}
+                            <div className="bracket-col-title">SEMIFINALES</div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                {renderSlotPair('sf', 0, 'SEMI 1', 'final')}
+                                {renderSlotPair('sf', 1, 'SEMI 2', 'final')}
+                            </div>
 
-                            <div className="winner-podium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-                                <div className="bracket-col-title" style={{ marginBottom: 0 }}>CAMPEÓN</div>
+                            <div style={{ marginTop: '2.5rem' }}>
+                                <div className="bracket-col-title">GRAN FINAL</div>
+                                {renderSlotPair('final', 0, 'MATCH 104', 'winner')}
+                            </div>
+
+                            <div className="winner-podium" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                                <div className="bracket-col-title" style={{ marginBottom: 0 }}>PODIO CAMPEÓN</div>
                                 <div className="champion-slot"
                                     onDrop={e => { e.preventDefault(); try { advance(JSON.parse(e.dataTransfer.getData('team')), 'winner', 0); } catch (err) { } }}
                                     onDragOver={e => e.preventDefault()}
@@ -303,39 +311,33 @@ function App() {
                                     ) : (
                                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 0.3 }}>
                                             <img src={new URL('./banderas/copa-mundial.png', import.meta.url).href} alt="Logo Mundial" style={{ height: '80px', filter: 'grayscale(1)' }} />
-                                            <span style={{ fontSize: '0.6rem', fontWeight: 800 }}>FINAL</span>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <div className="match-box third-match" style={{ width: '150px', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
-                                    <div className="match-header" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>TERCER PUESTO</div>
-                                    {[0, 1].map(i => {
-                                        const t = bracket.thirdPlace[i];
-                                        const isReady = bracket.thirdPlace[0] && bracket.thirdPlace[1];
-                                        return (
-                                            <div
-                                                key={i}
-                                                className={`match-team ${!t ? 'empty' : 'winner-ready'}`}
-                                                onClick={() => isReady && advance(t, 'thirdWinner', 0)}
-                                            >
-                                                <TeamFlag team={t} />
-                                                <span className="name">{t?.nombre || 'Perdedor Semi'}</span>
-                                            </div>
-                                        );
-                                    })}
-                                    {bracket.thirdWinner && (
-                                        <div style={{ padding: '4px', background: 'rgba(245, 158, 11, 0.2)', textAlign: 'center', fontSize: '0.7rem', fontWeight: 800, color: '#f59e0b', borderTop: '1px solid rgba(245, 158, 11, 0.2)' }}>
-                                            🥉 {bracket.thirdWinner.nombre}
+                                            <span style={{ fontSize: '0.6rem', fontWeight: 800 }}>MUNDIAL 2026</span>
                                         </div>
                                     )}
                                 </div>
                             </div>
 
-                            {renderSlotPair('sf', 1, 'SEMI 2', 'final')}
-                            <div style={{ marginTop: '1rem' }}>
-                                <div className="bracket-col-title">FINAL</div>
-                                {renderSlotPair('final', 0, 'GRAN FINAL', 'winner')}
+                            <div className="match-box third-match" style={{ width: '160px', border: '1px solid rgba(245, 158, 11, 0.3)', marginTop: '2.5rem' }}>
+                                <div className="match-header" style={{ background: 'rgba(245, 158, 11, 0.1)', color: '#f59e0b' }}>TERCER PUESTO</div>
+                                {[0, 1].map(i => {
+                                    const t = bracket.thirdPlace[i];
+                                    const isReady = bracket.thirdPlace[0] && bracket.thirdPlace[1];
+                                    return (
+                                        <div
+                                            key={i}
+                                            className={`match-team ${!t ? 'empty' : 'winner-ready'}`}
+                                            onClick={() => isReady && advance(t, 'thirdWinner', 0)}
+                                        >
+                                            <TeamFlag team={t} />
+                                            <span className="name">{t?.nombre || 'Perdedor Semi'}</span>
+                                        </div>
+                                    );
+                                })}
+                                {bracket.thirdWinner && (
+                                    <div style={{ padding: '6px', background: 'rgba(245, 158, 11, 0.2)', textAlign: 'center', fontSize: '0.75rem', fontWeight: 800, color: '#f59e0b', borderTop: '1px solid rgba(245, 158, 11, 0.2)' }}>
+                                        🥉 {bracket.thirdWinner.nombre}
+                                    </div>
+                                )}
                             </div>
                         </div>
 
